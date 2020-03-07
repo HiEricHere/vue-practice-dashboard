@@ -1,0 +1,5 @@
+@mixin grid-auto-row($margin){
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: $margin;
+}

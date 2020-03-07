@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+html {
+  font-size: 15px;
+  font-family: Roboto;
+}
+
+body {
+  padding: $margin;
+}
+
+h1, .h1 {
+  font-size: 1.8rem;
+}
+
+h2, .h2 {
+  font-size: 1.5rem;
+}
+
+h3, .h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  line-height: 1.25rem;
+}
+
+img {
+  width: 100%;
+}
+
+a, a:visited {
+  color: $contrast-color;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+

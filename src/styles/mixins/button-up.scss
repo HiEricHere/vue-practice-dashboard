@@ -1,0 +1,26 @@
+@use "sass:color";
+
+@mixin button-up($color-one, $color-two){
+  .button-up {
+    padding: 0.5vw;
+    border: solid 1px $color-one;
+    border-radius: 1rem;
+    color: $color-one;
+    background-color: $contrast-color;
+      &:hover {
+        border: solid 1px $color-two;
+        color: $color-two;
+        background-color: $color-one;
+      }
+      &:active {
+        border: solid 1px $color-two;
+        color: $color-two;
+        background-color: darken($color-one, 10%);
+      }
+  }
+  .active {
+    border: solid 1px $color-two;
+    color: $color-two;
+    background-color: darken($color-one, 10%);
+  }
+}

@@ -1,0 +1,4 @@
+@mixin user-module-container($margin){
+  padding: $margin;
+  box-shadow: 1px 1px 3px rgb(231, 231, 231);
+}
