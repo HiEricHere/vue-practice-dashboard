@@ -6,9 +6,7 @@
       <UserView />
     </main>
     <Test />
-    <p>{{userState.name}}</p>
-    <p>{{userState.email}}</p>
-    <p>{{userState.promotions}}</p>
+    <p v-for="(prop, idx) in userState" :key="idx">{{ statusMessage(prop) }}</p>
   </div>
 </template>
 
@@ -17,7 +15,12 @@ import AppHeader from './components/Header.vue';
 import UserCard from './components/UserCard.vue';
 import UserView from './components/UserView.vue';
 import Test from './components/Test.vue';
-import store from './store/store';
+
+const defaultState = {
+  name: 'No information available at this time',
+  email: 'No information available at this time',
+  promotions: [],
+};
 
 export default {
   name: 'App',
@@ -29,14 +32,30 @@ export default {
   },
   data() {
     return {
-      userState: store.state,
+      userState: defaultState,
+      loading: false,
     };
   },
   methods: {
-    set: store.set,
+    fetchUser(url) {
+      this.loading = true;
+      fetch(url)
+        .then((res) => res.json())
+        .then(({ name, email, promotions }) => {
+          this.loading = false;
+          this.userState = { name, email, promotions };
+        })
+        .catch(() => {
+          this.loading = false;
+          this.userState = defaultState;
+        });
+    },
+    statusMessage(current) {
+      return this.loading ? 'Loading...' : current;
+    },
   },
   created() {
-    store.get(process.env.VUE_APP_API);
+    this.fetchUser(process.env.VUE_APP_API);
   },
 };
 </script>
