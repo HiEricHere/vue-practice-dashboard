@@ -1,7 +1,11 @@
 <template>
   <header>
-    <figure><img src="../assets/beep-white.svg"></figure>
-    <a href="" class="h3">Log Out</a>
+    <figure>
+      <router-link to="/" exact>
+      <img src="../assets/beep-white.svg">
+      </router-link>
+    </figure>
+    <router-link to="/" class="h3">Log Out</router-link>
   </header>
 </template>
 
@@ -24,7 +28,7 @@ header {
   padding: $margin;
     figure {
       grid-column: 1/2;
-      img {
+      a img {
         width: 100%;
         vertical-align: text-bottom;
       }

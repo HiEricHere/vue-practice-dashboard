@@ -2,19 +2,16 @@
   <div id="app">
     <AppHeader />
     <main>
-      <UserCard />
-      <UserView />
+      <Sidebar :userState="userState"/>
+      <UserView :promotions="userState.promotions" />
     </main>
-    <Test />
-    <p v-for="(prop, idx) in userState" :key="idx">{{ statusMessage(prop) }}</p>
   </div>
 </template>
 
 <script>
 import AppHeader from './components/Header.vue';
-import UserCard from './components/UserCard.vue';
+import Sidebar from './components/Sidebar.vue';
 import UserView from './components/UserView.vue';
-import Test from './components/Test.vue';
 
 const defaultState = {
   name: 'No information available at this time',
@@ -26,9 +23,8 @@ export default {
   name: 'App',
   components: {
     AppHeader,
-    UserCard,
+    Sidebar,
     UserView,
-    Test,
   },
   data() {
     return {
@@ -50,8 +46,16 @@ export default {
           this.userState = defaultState;
         });
     },
-    statusMessage(current) {
-      return this.loading ? 'Loading...' : current;
+    computed: {
+      statusMessage() {
+        if (this.loading) {
+          this.userState = {
+            name: 'Loading...',
+            email: 'Loading...',
+            promotions: [],
+          };
+        }
+      },
     },
   },
   created() {

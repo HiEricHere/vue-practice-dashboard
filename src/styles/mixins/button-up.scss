@@ -17,6 +17,11 @@
         color: $color-two;
         background-color: darken($color-one, 10%);
       }
+      &:disabled {
+        border: solid 1px grey;
+        color: white;
+        background-color: grey;
+      }
   }
   .active {
     border: solid 1px $color-two;
