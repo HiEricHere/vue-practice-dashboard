@@ -103,4 +103,21 @@ export default {
 #promotions > * {
   grid-column: 2/3;
 }
+
+@media all and (max-width: 400px){
+  #promotions {
+    padding: $margin-mobile;
+    grid-template-columns: 1fr;
+    row-gap: $margin-mobile;
+      ul {
+        row-gap: $margin-mobile;
+      }
+      div {
+        column-gap: $margin-mobile;
+      }
+  }
+  #promotions > * {
+    grid-column: 1;
+  }
+}
 </style>

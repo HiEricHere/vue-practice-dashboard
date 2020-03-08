@@ -1,8 +1,18 @@
 @use "sass:color";
+@import "../variables.scss";
 
 @mixin button-up($color-one, $color-two){
+  @media all and (min-width: 800px){
+    .button-up {
+      padding: $margin / 2;
+    }
+  }
+  @media all and (max-width: 799px){
+    .button-up {
+      padding: $margin-mobile/2 $margin-mobile;
+    }
+  }
   .button-up {
-    padding: 0.5vw;
     border: solid 1px $color-one;
     border-radius: 1rem;
     color: $color-one;

@@ -1,7 +1,7 @@
 <template>
   <aside id="sidebar">
     <UserCard :userData="{ name: userState.name, email: userState.email }" />
-    <UserNav :promotions="userState.promotions" />
+    <UserNav />
   </aside>
 </template>
 
@@ -22,9 +22,17 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/variables.scss';
 
+@media all and (min-width: 800px) {
   aside {
     padding: $margin;
     box-shadow: 1px 1px 3px rgb(231, 231, 231);
   }
+}
+
+@media all and (max-width: 799px) {
+  aside {
+    padding: $margin-mobile;
+  }
+}
 
 </style>

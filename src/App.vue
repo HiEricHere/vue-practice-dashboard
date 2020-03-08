@@ -70,21 +70,40 @@ export default {
 @import './styles/variables';
 
 #app {
-  width: 70vw;
   margin: auto;
   display: grid;
   grid-template-rows: auto;
-  row-gap: $margin;
-  main {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: $margin;
-    #user-card {
-      grid-column: 1/2;
+    main {
+      display: grid;
     }
-    #user-view {
-      grid-column: 2/3;
+}
+
+@media all and (min-width: 800px){
+  #app {
+    row-gap: $margin;
+    main {
+      grid-template-columns: 1fr 3fr;
+      column-gap: $margin;
+      #user-card {
+        grid-column: 1/2;
+      }
+      #user-view {
+        grid-column: 2/3;
+      }
     }
+  }
+}
+
+@media all and (max-width: 799px){
+  #app {
+    row-gap: $margin-mobile;
+      main {
+        grid-template-rows: auto;
+        row-gap: $margin-mobile * 2;
+      }
+  }
+  #user-card {
+    display: none;
   }
 }
 </style>

@@ -44,5 +44,11 @@ export default {
     text-align: center;
   }
 }
+@media all and (max-width: 799px){
+  #user-card {
+    display: none;
+  }
+}
+
 
 </style>

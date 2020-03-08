@@ -24,7 +24,6 @@ header {
   grid-template-rows: 25px;
   align-items: center;
   background-color: rgb(0, 172, 181);
-  // border-radius: 20px;
   padding: $margin;
     figure {
       grid-column: 1/2;
@@ -37,5 +36,11 @@ header {
       grid-column: 3/4;
       margin-right: $margin;
     }
+}
+
+@media all and (max-width: 799px){
+  header {
+    padding: $margin-mobile;
+  }
 }
 </style>

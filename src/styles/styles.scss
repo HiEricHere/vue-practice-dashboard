@@ -2,11 +2,13 @@
 
 html {
   font-size: 15px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  padding: $margin;
+  @media all and (min-width: 800px){
+    padding: $margin;
+  }
 }
 
 h1, .h1 {

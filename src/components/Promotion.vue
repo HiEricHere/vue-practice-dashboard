@@ -53,4 +53,13 @@ li > span {
   text-align: center;
 }
 
+@media all and (max-width: 799px){
+  div {
+    padding: $margin-mobile;
+  }
+  li > span {
+    padding: $margin-mobile;
+  }
+}
+
 </style>
