@@ -1,24 +1,14 @@
 # vue-practice-dashboard
 
+## Purpose
+```
+A project to learn Vue. Display a mock customer page and list his promotions.
+```
 ## Project setup
 ```
-npm install
+Clone down, add a .env file to the root dir.
+Add a property called VUE_APP_API and set equal to a url. You'll know it if you know it.
+ie VUE_APP_API= url goes here
+Install dependencies and npm run serve.
+Open up localhost:8080/#/ on your browser.
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
